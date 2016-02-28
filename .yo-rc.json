@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "taamine",
+    "packageName": "com.walid.taamine",
+    "packageFolder": "com/walid/taamine",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "acef006a2c98424e37c09eb3e8df974acce802a8",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
