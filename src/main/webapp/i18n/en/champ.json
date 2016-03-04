@@ -1,0 +1,24 @@
+{
+    "taamineApp": {
+        "champ" : {
+            "home": {
+                "title": "Champs",
+                "createLabel": "Create a new Champ",
+                "createOrEditLabel": "Create or edit a Champ",
+                "search": "Search for Champ"
+            },
+            "created": "A new Champ is created with identifier {{ param }}",
+            "updated": "A Champ is updated with identifier {{ param }}",
+            "deleted": "A Champ is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Champ {{ id }}?"
+            },
+            "detail": {
+                "title": "Champ"
+            },
+            "chpLibelle": "ChpLibelle",
+            "chpDansListe": "ChpDansListe",
+            "chpType": "ChpType"
+        }
+    }
+}

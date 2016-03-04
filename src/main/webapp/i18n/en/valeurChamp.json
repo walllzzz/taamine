@@ -1,0 +1,25 @@
+{
+    "taamineApp": {
+        "valeurChamp" : {
+            "home": {
+                "title": "ValeurChamps",
+                "createLabel": "Create a new ValeurChamp",
+                "createOrEditLabel": "Create or edit a ValeurChamp",
+                "search": "Search for ValeurChamp"
+            },
+            "created": "A new ValeurChamp is created with identifier {{ param }}",
+            "updated": "A ValeurChamp is updated with identifier {{ param }}",
+            "deleted": "A ValeurChamp is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ValeurChamp {{ id }}?"
+            },
+            "detail": {
+                "title": "ValeurChamp"
+            },
+            "valValeur": "ValValeur",
+            "devis": "Devis",
+            "devis": "Devis",
+            "champ": "Champ"
+        }
+    }
+}

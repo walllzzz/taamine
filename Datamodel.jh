@@ -1,0 +1,79 @@
+entity TypeDevis {
+  ID Long,
+  Libelle String
+}
+
+entity Devis {
+  ID Long,
+  DateDevis ZonedDateTime
+}
+
+/**
+ * The Employee entity.
+ */
+entity Proposition {
+  ID Long,
+  Prix String,
+  DateProposition ZonedDateTime
+}
+
+entity Champ {
+  ID Long,
+  ChpLibelle String,
+  ChpDansListe Boolean,
+  ChpType Long
+}
+
+entity ChpListeDeroulante {
+  ID Long,
+  Valeur String
+}
+
+entity ValeurChamp {
+  ID Long,
+  ValValeur String
+}
+
+entity DevisTypeChp {
+  ID Long,
+  Actif Boolean,
+  Obligatoire Boolean
+}
+
+relationship OneToMany {
+  User{mesDevis} to Devis{user}
+}
+
+relationship ManyToOne {
+   Devis{typeDevis} to TypeDevis
+}
+
+relationship ManyToOne {
+  Proposition{devis} to Devis
+}
+relationship ManyToOne {
+  Proposition{entreprise} to User
+}
+
+relationship ManyToOne {
+  ChpListeDeroulante{champ} to Champ
+}
+relationship ManyToOne {
+  ValeurChamp{devis} to Devis
+}
+relationship OneToMany {
+  Devis{ValeursChamp} to ValeurChamp
+}
+relationship ManyToOne {
+  ValeurChamp{champ} to Champ
+}
+relationship ManyToOne {
+  DevisTypeChp{devisType} to TypeDevis
+}
+
+relationship ManyToOne {
+  DevisTypeChp{champ} to Champ
+}
+
+dto * with mapstruct
+service all with serviceImpl

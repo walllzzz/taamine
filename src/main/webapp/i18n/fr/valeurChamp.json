@@ -1,0 +1,26 @@
+{
+    "taamineApp": {
+        "valeurChamp" : {
+            "home": {
+                "title": "ValeurChamps",
+                "createLabel": "Créer un nouveau ValeurChamp",
+                "createOrEditLabel": "Créer ou éditer un ValeurChamp",
+                "search": "Search for ValeurChamp"
+            },
+            "created": "Un nouveau ValeurChamp a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ValeurChamp avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ValeurChamp avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ValeurChamp {{ id }} ?"
+            },
+            "detail": {
+                "title": "ValeurChamp"
+            },
+            "valValeur": "ValValeur",
+            "devis": "Devis",
+            "devis": "Devis",
+            "champ": "Champ"
+        }
+    }
+}
+

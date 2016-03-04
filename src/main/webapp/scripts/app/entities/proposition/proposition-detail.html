@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="taamineApp.proposition.detail.title">Proposition</span> {{proposition.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="taamineApp.proposition.prix">Prix</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{proposition.prix}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.proposition.dateProposition">DateProposition</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{proposition.dateProposition | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.proposition.devis">devis</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="devis.detail({id:proposition.devisId})">{{proposition.devisId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.proposition.entreprise">entreprise</span>
+                </td>
+                <td>
+                    {{proposition.entrepriseId}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

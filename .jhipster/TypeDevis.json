@@ -1,0 +1,14 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160229210031",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

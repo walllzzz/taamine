@@ -1,0 +1,25 @@
+{
+    "taamineApp": {
+        "champ" : {
+            "home": {
+                "title": "Champs",
+                "createLabel": "Créer un nouveau Champ",
+                "createOrEditLabel": "Créer ou éditer un Champ",
+                "search": "Search for Champ"
+            },
+            "created": "Un nouveau Champ a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Champ avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Champ avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Champ {{ id }} ?"
+            },
+            "detail": {
+                "title": "Champ"
+            },
+            "chpLibelle": "ChpLibelle",
+            "chpDansListe": "ChpDansListe",
+            "chpType": "ChpType"
+        }
+    }
+}
+

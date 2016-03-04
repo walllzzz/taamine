@@ -1,0 +1,60 @@
+<div>
+    <h2 translate="taamineApp.champ.home.title">Champs</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="champ.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="taamineApp.champ.home.createLabel">Create new Champ
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="taamineApp.champ.chpLibelle">ChpLibelle</span></th>
+                    <th><span translate="taamineApp.champ.chpDansListe">ChpDansListe</span></th>
+                    <th><span translate="taamineApp.champ.chpType">ChpType</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="champ in champs track by champ.id">
+                    <td><a ui-sref="champ.detail({id:champ.id})">{{champ.id}}</a></td>
+                    <td>{{champ.chpLibelle}}</td>
+                    <td>{{champ.chpDansListe}}</td>
+                    <td>{{champ.chpType}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="champ.detail({id:champ.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="champ.edit({id:champ.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="champ.delete({id:champ.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

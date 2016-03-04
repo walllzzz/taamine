@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="taamineApp.devis.detail.title">Devis</span> {{devis.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devis.dateDevis">DateDevis</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{devis.dateDevis | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devis.typeDevis">typeDevis</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="typeDevis.detail({id:devis.typeDevisId})">{{devis.typeDevisId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devis.user">user</span>
+                </td>
+                <td>
+                    {{devis.userId}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

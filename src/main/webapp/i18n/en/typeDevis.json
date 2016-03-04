@@ -1,0 +1,22 @@
+{
+    "taamineApp": {
+        "typeDevis" : {
+            "home": {
+                "title": "TypeDeviss",
+                "createLabel": "Create a new TypeDevis",
+                "createOrEditLabel": "Create or edit a TypeDevis",
+                "search": "Search for TypeDevis"
+            },
+            "created": "A new TypeDevis is created with identifier {{ param }}",
+            "updated": "A TypeDevis is updated with identifier {{ param }}",
+            "deleted": "A TypeDevis is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete TypeDevis {{ id }}?"
+            },
+            "detail": {
+                "title": "TypeDevis"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

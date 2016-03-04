@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="taamineApp.devisTypeChp.detail.title">DevisTypeChp</span> {{devisTypeChp.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devisTypeChp.actif">Actif</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{devisTypeChp.actif}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devisTypeChp.obligatoire">Obligatoire</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{devisTypeChp.obligatoire}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devisTypeChp.devisType">devisType</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="typeDevis.detail({id:devisTypeChp.devisTypeId})">{{devisTypeChp.devisTypeId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.devisTypeChp.champ">champ</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="champ.detail({id:devisTypeChp.champId})">{{devisTypeChp.champId}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

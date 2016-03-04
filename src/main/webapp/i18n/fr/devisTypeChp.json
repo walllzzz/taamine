@@ -1,0 +1,26 @@
+{
+    "taamineApp": {
+        "devisTypeChp" : {
+            "home": {
+                "title": "DevisTypeChps",
+                "createLabel": "Créer un nouveau DevisTypeChp",
+                "createOrEditLabel": "Créer ou éditer un DevisTypeChp",
+                "search": "Search for DevisTypeChp"
+            },
+            "created": "Un nouveau DevisTypeChp a été créé avec l'identifiant {{ param }}",
+            "updated": "Le DevisTypeChp avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le DevisTypeChp avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le DevisTypeChp {{ id }} ?"
+            },
+            "detail": {
+                "title": "DevisTypeChp"
+            },
+            "actif": "Actif",
+            "obligatoire": "Obligatoire",
+            "devisType": "DevisType",
+            "champ": "Champ"
+        }
+    }
+}
+

@@ -1,0 +1,22 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "champ",
+      "otherEntityName": "champ",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "valeur",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160229210035",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

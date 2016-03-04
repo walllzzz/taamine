@@ -1,0 +1,24 @@
+{
+    "taamineApp": {
+        "chpListeDeroulante" : {
+            "home": {
+                "title": "ChpListeDeroulantes",
+                "createLabel": "Créer un nouveau ChpListeDeroulante",
+                "createOrEditLabel": "Créer ou éditer un ChpListeDeroulante",
+                "search": "Search for ChpListeDeroulante"
+            },
+            "created": "Un nouveau ChpListeDeroulante a été créé avec l'identifiant {{ param }}",
+            "updated": "Le ChpListeDeroulante avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le ChpListeDeroulante avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ChpListeDeroulante {{ id }} ?"
+            },
+            "detail": {
+                "title": "ChpListeDeroulante"
+            },
+            "valeur": "Valeur",
+            "champ": "Champ"
+        }
+    }
+}
+

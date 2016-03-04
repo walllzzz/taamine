@@ -1,0 +1,50 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myValeurChampLabel" translate="taamineApp.valeurChamp.home.createOrEditLabel">Create or edit a ValeurChamp</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="valeurChamp.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="taamineApp.valeurChamp.valValeur" for="field_valValeur">ValValeur</label>
+            <input type="text" class="form-control" name="valValeur" id="field_valValeur"
+                    ng-model="valeurChamp.valValeur"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="taamineApp.valeurChamp.devis" for="field_devis">devis</label>
+            <select class="form-control" id="field_devis" name="devis" ng-model="valeurChamp.devisId" ng-options="devis.id as devis.id for devis in deviss">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="taamineApp.valeurChamp.devis" for="field_devis">devis</label>
+            <select class="form-control" id="field_devis" name="devis" ng-model="valeurChamp.devisId" ng-options="devis.id as devis.id for devis in deviss">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="taamineApp.valeurChamp.champ" for="field_champ">champ</label>
+            <select class="form-control" id="field_champ" name="champ" ng-model="valeurChamp.champId" ng-options="champ.id as champ.id for champ in champs">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

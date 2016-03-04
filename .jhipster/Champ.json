@@ -1,0 +1,24 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "chpLibelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "chpDansListe",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "chpType",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20160229210034",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

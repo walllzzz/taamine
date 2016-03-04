@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="taamineApp.valeurChamp.home.title">ValeurChamps</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="valeurChamp.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span 
+                        translate="taamineApp.valeurChamp.home.createLabel">Create new ValeurChamp
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="taamineApp.valeurChamp.valValeur">ValValeur</span></th>
+                    <th><span translate="taamineApp.valeurChamp.devis">devis</span></th>
+                    <th><span translate="taamineApp.valeurChamp.devis">devis</span></th>
+                    <th><span translate="taamineApp.valeurChamp.champ">champ</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="valeurChamp in valeurChamps track by valeurChamp.id">
+                    <td><a ui-sref="valeurChamp.detail({id:valeurChamp.id})">{{valeurChamp.id}}</a></td>
+                    <td>{{valeurChamp.valValeur}}</td>
+                    <td>
+                        <a ui-sref="devis.detail({id:valeurChamp.devisId})">{{valeurChamp.devisId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="devis.detail({id:valeurChamp.devisId})">{{valeurChamp.devisId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="champ.detail({id:valeurChamp.champId})">{{valeurChamp.champId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="valeurChamp.detail({id:valeurChamp.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="valeurChamp.edit({id:valeurChamp.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="valeurChamp.delete({id:valeurChamp.id})"
+                                    class="btn btn-danger btn-sm">                                    
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

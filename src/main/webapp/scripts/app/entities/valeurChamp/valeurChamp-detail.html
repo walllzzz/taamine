@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="taamineApp.valeurChamp.detail.title">ValeurChamp</span> {{valeurChamp.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="taamineApp.valeurChamp.valValeur">ValValeur</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{valeurChamp.valValeur}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.valeurChamp.devis">devis</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="devis.detail({id:valeurChamp.devisId})">{{valeurChamp.devisId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.valeurChamp.devis">devis</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="devis.detail({id:valeurChamp.devisId})">{{valeurChamp.devisId}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="taamineApp.valeurChamp.champ">champ</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="champ.detail({id:valeurChamp.champId})">{{valeurChamp.champId}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

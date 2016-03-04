@@ -1,0 +1,25 @@
+{
+    "taamineApp": {
+        "devisTypeChp" : {
+            "home": {
+                "title": "DevisTypeChps",
+                "createLabel": "Create a new DevisTypeChp",
+                "createOrEditLabel": "Create or edit a DevisTypeChp",
+                "search": "Search for DevisTypeChp"
+            },
+            "created": "A new DevisTypeChp is created with identifier {{ param }}",
+            "updated": "A DevisTypeChp is updated with identifier {{ param }}",
+            "deleted": "A DevisTypeChp is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete DevisTypeChp {{ id }}?"
+            },
+            "detail": {
+                "title": "DevisTypeChp"
+            },
+            "actif": "Actif",
+            "obligatoire": "Obligatoire",
+            "devisType": "DevisType",
+            "champ": "Champ"
+        }
+    }
+}

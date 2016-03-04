@@ -1,0 +1,23 @@
+{
+    "taamineApp": {
+        "typeDevis" : {
+            "home": {
+                "title": "TypeDeviss",
+                "createLabel": "Créer un nouveau TypeDevis",
+                "createOrEditLabel": "Créer ou éditer un TypeDevis",
+                "search": "Search for TypeDevis"
+            },
+            "created": "Un nouveau TypeDevis a été créé avec l'identifiant {{ param }}",
+            "updated": "Le TypeDevis avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le TypeDevis avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le TypeDevis {{ id }} ?"
+            },
+            "detail": {
+                "title": "TypeDevis"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}
+

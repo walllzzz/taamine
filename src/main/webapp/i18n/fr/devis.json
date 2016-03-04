@@ -1,0 +1,26 @@
+{
+    "taamineApp": {
+        "devis" : {
+            "home": {
+                "title": "Deviss",
+                "createLabel": "Créer un nouveau Devis",
+                "createOrEditLabel": "Créer ou éditer un Devis",
+                "search": "Search for Devis"
+            },
+            "created": "Un nouveau Devis a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Devis avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Devis avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Devis {{ id }} ?"
+            },
+            "detail": {
+                "title": "Devis"
+            },
+            "dateDevis": "DateDevis",
+            "typeDevis": "TypeDevis",
+            "valeursChamp": "ValeursChamp",
+            "user": "User"
+        }
+    }
+}
+
