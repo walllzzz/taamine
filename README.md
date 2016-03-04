@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # taamine
 
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
@@ -73,3 +74,6 @@ To setup this project in Jenkins, use the following configuration:
 [Karma]: http://karma-runner.github.io/
 [Jasmine]: http://jasmine.github.io/2.0/introduction.html
 [Protractor]: https://angular.github.io/protractor/
+=======
+this is my first project in gitlab
+>>>>>>> 389da1ffac7ca7d56ad8efa68451e9f286a58829
