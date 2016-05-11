@@ -7,7 +7,7 @@ angular.module('taamineApp')
                 parent: 'account',
                 url: '/settings',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER','USER_COMPANY'],
                     pageTitle: 'global.menu.account.settings'
                 },
                 views: {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('taamineApp')
-    .factory('Principal', function Principal($q, Account) {
+    .factory('Principal', function Principal($q, Account, User) {
         var _identity,
             _authenticated = false;
 
@@ -51,7 +51,6 @@ angular.module('taamineApp')
                 // if we have, reuse it by immediately resolving
                 if (angular.isDefined(_identity)) {
                     deferred.resolve(_identity);
-
                     return deferred.promise;
                 }
 
@@ -68,6 +67,25 @@ angular.module('taamineApp')
                         deferred.resolve(_identity);
                     });
                 return deferred.promise;
+            },
+            getUserId: function(){
+            	console.log("function getUserId called");
+                var deferred = $q.defer();
+                var userInfo={};
+            	this.identity().then(function(account) {  
+            		 console.log("account ");
+            		 console.log(account);
+            		 User.get({login: account.login}).$promise.then(function(result) {
+            			 console.log("deffered user id "+result.id);
+            			 userInfo.user=result;
+            			 userInfo.account=account;
+            			 deferred.resolve(userInfo);
+                     }).catch(function() {
+                    	 console.log("problem");
+                         deferred.resolve(userInfo);
+                     });;
+            	});
+            	return deferred.promise;
             }
         };
     });

@@ -24,6 +24,27 @@ angular.module('taamineApp')
                     }]
                 }
             })
+            .state('valeurChampDevis', {
+                parent: 'entity',
+                url: '/valeurChampsDevis/{id}',
+                data: {
+                    authorities: ['ROLE_USER','ROLE_COMPANY'],
+                    pageTitle: 'taamineApp.valeurChamp.home.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/valeurChamp/valeurChamps.html',
+                        controller: 'ValeurChampDevisController'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('valeurChamp');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+                }
+            })
             .state('valeurChamp.detail', {
                 parent: 'entity',
                 url: '/valeurChamp/{id}',

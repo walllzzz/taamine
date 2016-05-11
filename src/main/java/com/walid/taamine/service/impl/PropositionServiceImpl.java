@@ -75,4 +75,32 @@ public class PropositionServiceImpl implements PropositionService{
         log.debug("Request to delete Proposition : {}", id);
         propositionRepository.delete(id);
     }
+
+	@Override
+	public List<PropositionDTO> findAllByDevisId(Long id) {
+		
+		log.debug("Request to find all proposition by devis id : {}", id);     
+        List<PropositionDTO> result = propositionRepository.findAllByDevisId(id).stream()
+                .map(propositionMapper::propositionToPropositionDTO)
+                .collect(Collectors.toCollection(LinkedList::new));
+            return result;
+	}
+
+	@Override
+	public List<PropositionDTO> findAllByUserId(Long id) {
+		log.debug("Request to find all proposition by user id : {}", id);     
+        List<PropositionDTO> result = propositionRepository.findAllByUserId(id).stream()
+                .map(propositionMapper::propositionToPropositionDTO)
+                .collect(Collectors.toCollection(LinkedList::new));
+            return result;
+	}
+
+	@Override
+	public List<PropositionDTO> findAllByCompanyId(Long id) {
+		log.debug("Request to find all proposition by company id : {}", id);     
+        List<PropositionDTO> result = propositionRepository.findAllByCompanyId(id).stream()
+                .map(propositionMapper::propositionToPropositionDTO)
+                .collect(Collectors.toCollection(LinkedList::new));
+            return result;
+	}
 }

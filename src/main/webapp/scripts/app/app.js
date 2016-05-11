@@ -40,7 +40,14 @@ angular.module('taamineApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascal
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
             var titleKey = 'global.title' ;
-
+            console.log("statechange interceptor");
+            console.log("fromstate "+fromState.name);
+            console.log("fromparam"+fromParams);
+            console.log(fromParams);
+            console.log("toparam"+toParams);
+            console.log(toParams);
+            console.log("previous state "+ $rootScope.previousStateName);
+            console.log("to state "+ toState.name);
             // Remember previous state unless we've been redirected to login or we've just
             // reset the state memory after logout. If we're redirected to login, our
             // previousState is already set in the authExpiredInterceptor. If we're going
@@ -49,6 +56,12 @@ angular.module('taamineApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascal
               $rootScope.previousStateName = fromState.name;
               $rootScope.previousStateParams = fromParams;
             }
+            // if we have been redirected from devis 
+            if (toState.name == 'login' && fromState.name=='devisTypeChpByDevisType') {
+            	console.log("redirect to login from devis");
+                $rootScope.previousStateName = fromState.name;
+                $rootScope.previousStateParams = fromParams;
+              }
 
             // Set the page title key to the one configured in state or use default one
             if (toState.data.pageTitle) {
@@ -121,6 +134,10 @@ angular.module('taamineApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pascal
         tmhDynamicLocaleProvider.useCookieStorage();
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
         
+    })
+    // Initialize material design
+    .config(function () {
+        $.material.init();
     })
     // jhipster-needle-angularjs-add-config JHipster will add new application configuration here
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {

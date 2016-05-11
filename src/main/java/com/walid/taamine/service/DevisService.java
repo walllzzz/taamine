@@ -22,6 +22,12 @@ public interface DevisService {
      *  @return the list of entities
      */
     public List<DevisDTO> findAll();
+    
+    /**
+     *  get all the deviss of user
+     *  @return the list of entities
+     */
+    public List<DevisDTO> findAllByUserId(Long id);
 
     /**
      *  get the "id" devis.

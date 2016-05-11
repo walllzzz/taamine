@@ -6,14 +6,14 @@
             "home": "Accueil",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
-                "main": "Entités",
-                "proposition": "Proposition",
-                "chpListeDeroulante": "ChpListeDeroulante",
-                "valeurChamp": "ValeurChamp",
-                "devisTypeChp": "DevisTypeChp",
-                "devis": "Devis",
-                "champ": "Champ",
-                "typeDevis": "TypeDevis",
+                "main": "Entité",
+                "proposition": "Les Propositions",
+                "chpListeDeroulante": "Les champs de la liste déroulantes",
+                "valeurChamp": "Les valeurs de devis",
+                "devisTypeChp": "Les champs de type de devis",
+                "devis": "Les Devis",
+                "champ": "Les Champs",
+                "typeDevis": "Les Type de devis",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -33,4 +33,10 @@ public interface ValeurChampService {
      *  delete the "id" valeurChamp.
      */
     public void delete(Long id);
+    /**
+     * get all valeurChamps by devis id
+     * @param id
+     * @return
+     */
+	public List<ValeurChampDTO> findAllByDevisId(Long id);
 }

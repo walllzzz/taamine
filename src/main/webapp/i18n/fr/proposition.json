@@ -2,7 +2,7 @@
     "taamineApp": {
         "proposition" : {
             "home": {
-                "title": "Propositions",
+                "title": "Les propositions",
                 "createLabel": "Créer un nouveau Proposition",
                 "createOrEditLabel": "Créer ou éditer un Proposition",
                 "search": "Search for Proposition"
@@ -14,10 +14,10 @@
                 "question": "Etes-vous certain de vouloir supprimer le Proposition {{ id }} ?"
             },
             "detail": {
-                "title": "Proposition"
+                "title": "Les propositions"
             },
             "prix": "Prix",
-            "dateProposition": "DateProposition",
+            "dateProposition": "Date de la proposition",
             "devis": "Devis",
             "entreprise": "Entreprise"
         }

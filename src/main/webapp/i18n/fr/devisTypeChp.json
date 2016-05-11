@@ -2,7 +2,7 @@
     "taamineApp": {
         "devisTypeChp" : {
             "home": {
-                "title": "DevisTypeChps",
+                "title": "Les champs de type de devis",
                 "createLabel": "Créer un nouveau DevisTypeChp",
                 "createOrEditLabel": "Créer ou éditer un DevisTypeChp",
                 "search": "Search for DevisTypeChp"
@@ -14,11 +14,11 @@
                 "question": "Etes-vous certain de vouloir supprimer le DevisTypeChp {{ id }} ?"
             },
             "detail": {
-                "title": "DevisTypeChp"
+                "title": "Les champs de type de devis"
             },
             "actif": "Actif",
             "obligatoire": "Obligatoire",
-            "devisType": "DevisType",
+            "devisType": "Type de Devis",
             "champ": "Champ"
         }
     }

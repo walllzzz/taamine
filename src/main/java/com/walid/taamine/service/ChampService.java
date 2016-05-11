@@ -33,4 +33,6 @@ public interface ChampService {
      *  delete the "id" champ.
      */
     public void delete(Long id);
+    
+
 }

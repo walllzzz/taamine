@@ -2,7 +2,7 @@
     "taamineApp": {
         "chpListeDeroulante" : {
             "home": {
-                "title": "ChpListeDeroulantes",
+                "title": "Les champs de type liste déroulantes",
                 "createLabel": "Créer un nouveau ChpListeDeroulante",
                 "createOrEditLabel": "Créer ou éditer un ChpListeDeroulante",
                 "search": "Search for ChpListeDeroulante"
@@ -14,7 +14,7 @@
                 "question": "Etes-vous certain de vouloir supprimer le ChpListeDeroulante {{ id }} ?"
             },
             "detail": {
-                "title": "ChpListeDeroulante"
+                "title": "Les champs de type liste déroulantes"
             },
             "valeur": "Valeur",
             "champ": "Champ"

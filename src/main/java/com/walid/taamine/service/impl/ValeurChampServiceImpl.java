@@ -75,4 +75,13 @@ public class ValeurChampServiceImpl implements ValeurChampService{
         log.debug("Request to delete ValeurChamp : {}", id);
         valeurChampRepository.delete(id);
     }
+
+	@Override
+	public List<ValeurChampDTO> findAllByDevisId(Long id) {		
+		 log.debug("Request to get all ValeurChampsDevis by id {}",id);
+		 List<ValeurChampDTO> result = valeurChampRepository.findAllByDevisId(id).stream()
+		            .map(valeurChampMapper::valeurChampToValeurChampDTO)
+		            .collect(Collectors.toCollection(LinkedList::new));
+		        return result;
+	}
 }

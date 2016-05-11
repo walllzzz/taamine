@@ -13,4 +13,9 @@ angular.module('taamineApp')
             },
             'update': { method:'PUT' }
         });
+    })
+    .factory('ValeurChampDevis', function ($resource, DateUtils) {
+        return $resource('api/valeurChampsDevis/:id', {}, {
+            'query': { method: 'GET', isArray: true}           
+        });
     });

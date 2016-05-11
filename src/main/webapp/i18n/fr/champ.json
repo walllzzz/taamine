@@ -16,9 +16,9 @@
             "detail": {
                 "title": "Champ"
             },
-            "chpLibelle": "ChpLibelle",
-            "chpDansListe": "ChpDansListe",
-            "chpType": "ChpType"
+            "chpLibelle": "Libelle",
+            "chpDansListe": "Champs dans la Liste",
+            "chpType": "Champs Type"
         }
     }
 }

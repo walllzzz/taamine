@@ -75,4 +75,17 @@ public class DevisServiceImpl implements DevisService{
         log.debug("Request to delete Devis : {}", id);
         devisRepository.delete(id);
     }
+    
+    /**
+     *  get all the deviss.
+     *  @return the list of entities
+     */
+    @Transactional(readOnly = true) 
+	public List<DevisDTO> findAllByUserId(Long id) {
+    	 log.debug("Request to get all Deviss by user ID");
+         List<DevisDTO> result = devisRepository.findAllByUserId(id).stream()
+             .map(devisMapper::devisToDevisDTO)
+             .collect(Collectors.toCollection(LinkedList::new));
+         return result;
+	}
 }

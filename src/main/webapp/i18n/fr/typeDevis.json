@@ -2,7 +2,7 @@
     "taamineApp": {
         "typeDevis" : {
             "home": {
-                "title": "TypeDeviss",
+                "title": "Les types de devis",
                 "createLabel": "Créer un nouveau TypeDevis",
                 "createOrEditLabel": "Créer ou éditer un TypeDevis",
                 "search": "Search for TypeDevis"
@@ -14,7 +14,7 @@
                 "question": "Etes-vous certain de vouloir supprimer le TypeDevis {{ id }} ?"
             },
             "detail": {
-                "title": "TypeDevis"
+                "title": "Les types de devis"
             },
             "libelle": "Libelle"
         }

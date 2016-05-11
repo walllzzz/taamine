@@ -18,8 +18,8 @@ public class DevisTypeChpDTO implements Serializable {
 
     private Boolean obligatoire;
 
-
     private Long devisTypeId;
+    
     private Long champId;
     public Long getId() {
         return id;

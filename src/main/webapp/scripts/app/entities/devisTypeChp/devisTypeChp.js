@@ -24,6 +24,32 @@ angular.module('taamineApp')
                     }]
                 }
             })
+            .state('devisTypeChpByDevisType', {
+                parent: 'entity',
+                url: '/devisTypeChps/devisType/{id}',
+                data: {
+                    //authorities: ['ROLE_USER'],
+                    authorities: [],
+                    pageTitle: 'taamineApp.devisTypeChp.home.title'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/devisTypeChp/SaisieDevis.html',
+                        controller: 'DevisTypeChpByTypeDevisController'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('devisTypeChp');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+//                ,
+//                    devisTypeChps: ['$stateParams', 'DevisTypeChp', function($stateParams, DevisTypeChp) {
+//                        return DevisTypeChpByTypeDevis.getByIdTypeDevis({id : $stateParams.id});
+//                    }]
+                }
+            })
             .state('devisTypeChp.detail', {
                 parent: 'entity',
                 url: '/devisTypeChp/{id}',

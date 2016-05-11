@@ -1,0 +1,55 @@
+<div>
+    <h2 translate="taamineApp.devis.home.title">Deviss</h2>
+    <jh-alert></jh-alert>
+    <div class="container-fluid">
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="taamineApp.devis.dateDevis">DateDevis</span></th>
+                    <th><span translate="taamineApp.devis.typeDevis">typeDevis</span></th>
+                    <th><span translate="taamineApp.devis.user">user</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="devis in deviss track by devis.id">
+                    <td><a ui-sref="devis.detail({id:devis.id})">{{devis.id}}</a></td>
+                    <td>{{devis.dateDevis | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="typeDevis.detail({id:devis.typeDevisId})">{{devis.typeDevisId}}</a>
+                    </td>
+                    <td>
+                        {{devis.userId}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="devis.detail({id:devis.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="valeurChampDevis({id:devis.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm">Voir les détails</span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="propositionDevis.new({id:devis.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm">Faite une proposition</span>
+                            </button>
+                         
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

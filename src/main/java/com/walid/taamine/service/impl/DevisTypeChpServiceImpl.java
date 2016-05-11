@@ -75,4 +75,14 @@ public class DevisTypeChpServiceImpl implements DevisTypeChpService{
         log.debug("Request to delete DevisTypeChp : {}", id);
         devisTypeChpRepository.delete(id);
     }
+
+	@Override
+	public List<DevisTypeChpDTO> findByTypeDevis(Long idDevisType) {
+		// TODO Auto-generated method stub
+		 List<DevisTypeChpDTO> result = devisTypeChpRepository.findAllByDevisTypeId(idDevisType).stream()
+		            .map(devisTypeChpMapper::devisTypeChpToDevisTypeChpDTO)
+		            .collect(Collectors.toCollection(LinkedList::new));
+		 return result;
+		
+	}
 }

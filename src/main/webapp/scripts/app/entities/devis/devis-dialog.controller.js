@@ -29,6 +29,8 @@ angular.module('taamineApp').controller('DevisDialogController',
             if ($scope.devis.id != null) {
                 Devis.update($scope.devis, onSaveSuccess, onSaveError);
             } else {
+            	console.log("date" +$scope.devis.dateDevis);
+            	console.log($scope.devis.dateDevis);
                 Devis.save($scope.devis, onSaveSuccess, onSaveError);
             }
         };

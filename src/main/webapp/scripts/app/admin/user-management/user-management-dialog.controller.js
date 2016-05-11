@@ -5,7 +5,7 @@ angular.module('taamineApp').controller('UserManagementDialogController',
         function($scope, $stateParams, $uibModalInstance, entity, User, Language) {
 
         $scope.user = entity;
-        $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
+        $scope.authorities = ["ROLE_USER", "ROLE_ADMIN","ROLE_COMPANY"];
         Language.getAll().then(function (languages) {
             $scope.languages = languages;
         });

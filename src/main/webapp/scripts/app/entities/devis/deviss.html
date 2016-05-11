@@ -44,6 +44,20 @@
                                 <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
                             </button>
                             <button type="submit"
+                                    ui-sref="valeurChampDevis({id:devis.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm">Voir les détails</span>
+                            </button>
+                            
+                             <button type="submit" has-authority="ROLE_USER"
+                                    ui-sref="propositionDevis({id:devis.id})"
+                                    class="btn btn-info btn-sm"> 
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm">Voir les propositions</span>
+                            </button>
+                         
+                            <button type="submit"
                                     ui-sref="devis.edit({id:devis.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>

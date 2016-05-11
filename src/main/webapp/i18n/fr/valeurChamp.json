@@ -2,9 +2,9 @@
     "taamineApp": {
         "valeurChamp" : {
             "home": {
-                "title": "ValeurChamps",
-                "createLabel": "Créer un nouveau ValeurChamp",
-                "createOrEditLabel": "Créer ou éditer un ValeurChamp",
+                "title": "Les valeur de champs de devis",
+                "createLabel": "Créer un nouveau Valeurs des champs",
+                "createOrEditLabel": "Créer ou éditer un Valeurs des champs",
                 "search": "Search for ValeurChamp"
             },
             "created": "Un nouveau ValeurChamp a été créé avec l'identifiant {{ param }}",
@@ -14,9 +14,9 @@
                 "question": "Etes-vous certain de vouloir supprimer le ValeurChamp {{ id }} ?"
             },
             "detail": {
-                "title": "ValeurChamp"
+                "title": "Les valeur de champs de devis"
             },
-            "valValeur": "ValValeur",
+            "valValeur": "Valeur",
             "devis": "Devis",
             "devis": "Devis",
             "champ": "Champ"

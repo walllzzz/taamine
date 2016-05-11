@@ -33,4 +33,23 @@ public interface PropositionService {
      *  delete the "id" proposition.
      */
     public void delete(Long id);
+    /**
+     * find all by devis id
+     * @param id
+     * @return
+     */
+	public List<PropositionDTO> findAllByDevisId(Long id);
+	/**
+	 * find all by User id
+	 * @param id
+	 * @return
+	 */
+	public List<PropositionDTO> findAllByUserId(Long id);
+
+	/**
+	 * find All by Company id
+	 * @param id
+	 * @return
+	 */
+	public List<PropositionDTO> findAllByCompanyId(Long id);
 }

@@ -14,4 +14,19 @@ angular.module('taamineApp')
             },
             'update': { method:'PUT' }
         });
-    });
+    })
+    .factory('PropositionDevis', function ($resource, DateUtils) {
+        return $resource('api/propositionsDevis/:id', {}, {
+            'query': { method: 'GET', isArray: true}            
+        });
+    })
+    .factory('MesProposition', function ($resource, DateUtils) {
+        return $resource('api/mespropositions/:id', {}, {
+            'query': { method: 'GET', isArray: true}            
+        });
+    })
+    .factory('MesPropositionEntreprise', function ($resource, DateUtils) {
+        return $resource('api/mespropositionsEntreprise/:id', {}, {
+            'query': { method: 'GET', isArray: true}            
+        });
+    }) ;

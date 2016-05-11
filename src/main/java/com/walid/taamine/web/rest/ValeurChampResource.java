@@ -86,6 +86,19 @@ public class ValeurChampResource {
         log.debug("REST request to get all ValeurChamps");
         return valeurChampService.findAll();
             }
+    
+    /**
+     * GET  /valeurChamps -> get all the valeurChamps.
+     */
+    @RequestMapping(value = "/valeurChampsDevis/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<ValeurChampDTO> getAllValeurChamps(@PathVariable Long id) {
+        log.debug("REST request to get all ValeurChampsDevis id : {}",id);
+        return valeurChampService.findAllByDevisId(id);
+        }
 
     /**
      * GET  /valeurChamps/:id -> get the "id" valeurChamp.

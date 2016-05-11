@@ -17,37 +17,62 @@
                         <span class="hidden-sm" translate="global.menu.home">Home</span>
                     </a>
                 </li>
+                 <li ui-sref-active="active" has-authority="ROLE_USER" ng-switch-when="true" >
+                    <a ui-sref="mesdevis" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Mes devis</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" has-authority="ROLE_USER" ng-switch-when="true">
+                    <a ui-sref="mespropositions" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Mes Propositions</span>
+                    </a>
+                </li>
+                
+                 <li ui-sref-active="active" has-authority="ROLE_COMPANY" ng-switch-when="true">
+                    <a ui-sref="devisEntreprise" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Voir les devis</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active" has-authority="ROLE_COMPANY" ng-switch-when="true">
+                    <a ui-sref="mespropositionsEntreprise" data-toggle="collapse" data-target=".navbar-collapse.in">
+                        <span class="glyphicon glyphicon-home"></span>
+                        <span class="hidden-sm">Voir mes propositions faites</span>
+                    </a>
+                </li>
                 <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <li ui-sref-active="active" ng-switch-when="true" has-authority="ROLE_ADMIN" dropdown>
+                    <a dropdown-toggle href="">
                         <span>
                             <span class="glyphicon glyphicon-th-list"></span>
                             <span class="hidden-sm" translate="global.menu.entities.main">
-                                Entities
+                                Actions
                             </span>
                             <b class="caret"></b>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li ui-sref-active="active" ><a ui-sref="proposition" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.proposition">Proposition</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.proposition">Les propositions</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="chpListeDeroulante" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.chpListeDeroulante">Chp liste deroulante</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.chpListeDeroulante">les champs des listes deroulante</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="valeurChamp" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.valeurChamp">Valeur champ</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.valeurChamp">Valeur des devis</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="devisTypeChp" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.devisTypeChp">Devis type chp</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.devisTypeChp">Les champs de type de devis</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="devis" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.devis">Devis</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.devis">les Devis</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="champ" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.champ">Champ</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.champ">Les champs de devis</span></a></li>
                         <li ui-sref-active="active" ><a ui-sref="typeDevis" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span translate="global.menu.entities.typeDevis">Type devis</span></a></li>
+                        &#xA0;<span translate="global.menu.entities.typeDevis">Les type de devis</span></a></li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                     </ul>
                 </li>
-                <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
+                <li ng-class="{active: $state.includes('account')}" dropdown>
+                    <a dropdown-toggle href="" id="account-menu">
                         <span>
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="hidden-sm" translate="global.menu.account.main">
@@ -71,8 +96,8 @@
                             &#xA0;<span translate="global.menu.account.register">Register</span></a></li>
                     </ul>
                 </li>
-                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="admin-menu">
+                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" dropdown>
+                    <a dropdown-toggle href="" id="admin-menu">
                         <span>
                             <span class="glyphicon glyphicon-tower"></span>
                             <span class="hidden-sm" translate="global.menu.admin.main">Administration</span>
@@ -97,8 +122,8 @@
                         <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
                     </ul>
                 </li>
-                <li ui-sref-active="active" class="dropdown pointer" ng-controller="LanguageController">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                <li ui-sref-active="active" dropdown ng-controller="LanguageController">
+                    <a dropdown-toggle href="">
                         <span>
                             <span class="glyphicon glyphicon-flag"></span>
                             <span class="hidden-sm" translate="global.menu.language">Language</span>

@@ -2,8 +2,11 @@ package com.walid.taamine.web.rest;
 
 import com.walid.taamine.Application;
 import com.walid.taamine.domain.DevisTypeChp;
+import com.walid.taamine.domain.TypeDevis;
 import com.walid.taamine.repository.DevisTypeChpRepository;
+import com.walid.taamine.repository.TypeDevisRepository;
 import com.walid.taamine.service.DevisTypeChpService;
+import com.walid.taamine.service.TypeDevisService;
 import com.walid.taamine.web.rest.dto.DevisTypeChpDTO;
 import com.walid.taamine.web.rest.mapper.DevisTypeChpMapper;
 
@@ -59,6 +62,12 @@ public class DevisTypeChpResourceIntTest {
 
     @Inject
     private DevisTypeChpService devisTypeChpService;
+    
+    @Inject
+    private TypeDevisRepository typeDevisRepository;
+    
+    @Inject
+    private TypeDevisService typeDevisService;
 
     @Inject
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -69,6 +78,7 @@ public class DevisTypeChpResourceIntTest {
     private MockMvc restDevisTypeChpMockMvc;
 
     private DevisTypeChp devisTypeChp;
+    private TypeDevis typeDevis;
 
     @PostConstruct
     public void setup() {
@@ -86,6 +96,12 @@ public class DevisTypeChpResourceIntTest {
         devisTypeChp = new DevisTypeChp();
         devisTypeChp.setActif(DEFAULT_ACTIF);
         devisTypeChp.setObligatoire(DEFAULT_OBLIGATOIRE);
+        /** init type devis*/
+        typeDevis= new TypeDevis();
+        typeDevis.setLibelle("Assure Auto");
+        typeDevis.setId(1L);
+        devisTypeChp.setDevisType(typeDevis);
+        
     }
 
     @Test
@@ -123,11 +139,26 @@ public class DevisTypeChpResourceIntTest {
                 .andExpect(jsonPath("$.[*].actif").value(hasItem(DEFAULT_ACTIF.booleanValue())))
                 .andExpect(jsonPath("$.[*].obligatoire").value(hasItem(DEFAULT_OBLIGATOIRE.booleanValue())));
     }
+    @Test
+    @Transactional
+    public void getAllDevisTypeChpsByDevisType() throws Exception {
+        // Initialize the database
+        devisTypeChpRepository.saveAndFlush(devisTypeChp);
+
+        // Get all the devisTypeChps
+        restDevisTypeChpMockMvc.perform(get("/api/devisTypeChps/devisType/{id}",devisTypeChp.getDevisType().getId()))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.[*].id").value(hasItem(devisTypeChp.getId().intValue())))
+                .andExpect(jsonPath("$.[*].actif").value(hasItem(DEFAULT_ACTIF.booleanValue())))
+                .andExpect(jsonPath("$.[*].obligatoire").value(hasItem(DEFAULT_OBLIGATOIRE.booleanValue())));
+    }
 
     @Test
     @Transactional
     public void getDevisTypeChp() throws Exception {
         // Initialize the database
+    	
         devisTypeChpRepository.saveAndFlush(devisTypeChp);
 
         // Get the devisTypeChp

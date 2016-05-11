@@ -86,6 +86,18 @@ public class DevisTypeChpResource {
         log.debug("REST request to get all DevisTypeChps");
         return devisTypeChpService.findAll();
             }
+    /**
+     * GET  /devisTypeChps -> get all the devisTypeChps.
+     */
+    @RequestMapping(value = "/devisTypeChps/devisType/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<DevisTypeChpDTO> getAllDevisTypeChps(@PathVariable Long id) {
+        log.debug("REST request to get all DevisTypeChps by DevisType : {}", id);
+        return devisTypeChpService.findByTypeDevis(id);
+            }
 
     /**
      * GET  /devisTypeChps/:id -> get the "id" devisTypeChp.

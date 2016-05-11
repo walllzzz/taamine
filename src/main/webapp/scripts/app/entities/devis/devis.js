@@ -9,6 +9,7 @@ angular.module('taamineApp')
                 data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'taamineApp.devis.home.title'
+       
                 },
                 views: {
                     'content@': {
@@ -24,11 +25,55 @@ angular.module('taamineApp')
                     }]
                 }
             })
+             .state('mesdevis', {
+                parent: 'entity',
+                url: '/mesdevis',
+                data: {
+                    authorities: ['ROLE_USER'],
+                    pageTitle: 'taamineApp.devis.home.title'
+       
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/devis/deviss.html',
+                        controller: 'MesDevisController'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('devis');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+                }
+            })
+            .state('devisEntreprise', {
+                parent: 'entity',
+                url: '/devisEntreprise',
+                data: {
+                    authorities: ['ROLE_COMPANY'],
+                    pageTitle: 'taamineApp.devis.home.title'
+       
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/devis/devisEntreprise.html',
+                        controller: 'DevisCompanyController'
+                    }
+                },
+                resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('devis');
+                        $translatePartialLoader.addPart('global');
+                        return $translate.refresh();
+                    }]
+                }
+            })
             .state('devis.detail', {
                 parent: 'entity',
                 url: '/devis/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER','ROLE_COMPANY'],
                     pageTitle: 'taamineApp.devis.detail.title'
                 },
                 views: {

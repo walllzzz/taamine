@@ -86,6 +86,20 @@ public class DevisResource {
         log.debug("REST request to get all Deviss");
         return devisService.findAll();
             }
+    
+
+    /**
+     * GET  /deviss -> get all the deviss of user.
+     */
+    @RequestMapping(value = "/mesdevis/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<DevisDTO> getMesDevis(@PathVariable Long id) {
+        log.debug("REST request to get all Deviss by user id:  {}",id);
+        return devisService.findAllByUserId(id);
+            }
 
     /**
      * GET  /deviss/:id -> get the "id" devis.

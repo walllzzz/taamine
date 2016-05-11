@@ -1,6 +1,7 @@
 package com.walid.taamine.service;
 
 import com.walid.taamine.domain.DevisTypeChp;
+import com.walid.taamine.web.rest.dto.ChampDTO;
 import com.walid.taamine.web.rest.dto.DevisTypeChpDTO;
 
 import java.util.LinkedList;
@@ -33,4 +34,9 @@ public interface DevisTypeChpService {
      *  delete the "id" devisTypeChp.
      */
     public void delete(Long id);
+    
+    /**
+     * find champs by idTypeDevis
+     */
+    public List<DevisTypeChpDTO> findByTypeDevis(Long idTypeDevis);
 }

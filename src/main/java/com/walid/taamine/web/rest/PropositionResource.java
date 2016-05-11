@@ -86,6 +86,42 @@ public class PropositionResource {
         log.debug("REST request to get all Propositions");
         return propositionService.findAll();
             }
+    /**
+     * GET  /propositions -> get all the propositions of a devis.
+     */
+    @RequestMapping(value = "/propositionsDevis/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<PropositionDTO> getAllPropositionsDevis(@PathVariable Long id) {
+        log.debug("REST request to get all Propositions by devis id {}",id);
+        return propositionService.findAllByDevisId(id);
+            }
+    /**
+     * GET  /propositions -> get all the propositions of a user.
+     */
+    @RequestMapping(value = "/mespropositions/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<PropositionDTO> getAllPropositionsByUser(@PathVariable Long id) {
+        log.debug("REST request to get all Propositions by user id {}",id);
+        return propositionService.findAllByUserId(id);
+            }
+    /**
+     * GET  /propositions -> get all the propositions of a user.
+     */
+    @RequestMapping(value = "/mespropositionsEntreprise/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<PropositionDTO> getAllPropositionsByCompany(@PathVariable Long id) {
+        log.debug("REST request to get all Propositions by company id {}",id);
+        return propositionService.findAllByCompanyId(id);
+            }
 
     /**
      * GET  /propositions/:id -> get the "id" proposition.

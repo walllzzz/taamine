@@ -1,12 +1,21 @@
 'use strict';
 
 angular.module('taamineApp').controller('PropositionDialogController',
-    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Proposition', 'Devis', 'User',
-        function($scope, $stateParams, $uibModalInstance, entity, Proposition, Devis, User) {
+    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Proposition', 'Devis', 'User','Principal',
+        function($scope, $stateParams, $uibModalInstance, entity, Proposition, Devis, User,Principal) {
 
-        $scope.proposition = entity;
-        $scope.deviss = Devis.query();
-        $scope.users = User.query();
+    	$scope.proposition = entity;
+        if($scope.proposition.devisId){
+        	$scope.deviss=[Devis.get({id:$scope.proposition.devisId})];
+        	Principal.getUserId().then(function(userInfo){
+        		$scope.proposition.entrepriseId=userInfo.user.id;
+        		$scope.users = [userInfo.user];
+        	});
+        }else {
+        	$scope.deviss = Devis.query();
+        	$scope.users = User.query();
+        }
+        
         $scope.load = function(id) {
             Proposition.get({id : id}, function(result) {
                 $scope.proposition = result;
