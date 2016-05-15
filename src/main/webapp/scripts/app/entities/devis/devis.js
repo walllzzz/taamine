@@ -7,7 +7,7 @@ angular.module('taamineApp')
                 parent: 'entity',
                 url: '/deviss',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'taamineApp.devis.home.title'
        
                 },
@@ -112,9 +112,9 @@ angular.module('taamineApp')
                             }
                         }
                     }).result.then(function(result) {
-                        $state.go('devis', null, { reload: true });
+                        $state.go('mesdevis', null, { reload: true });
                     }, function() {
-                        $state.go('devis');
+                        $state.go('mesdevis');
                     })
                 }]
             })
@@ -135,7 +135,7 @@ angular.module('taamineApp')
                             }]
                         }
                     }).result.then(function(result) {
-                        $state.go('devis', null, { reload: true });
+                        $state.go('mesdevis', null, { reload: true });
                     }, function() {
                         $state.go('^');
                     })
@@ -158,7 +158,7 @@ angular.module('taamineApp')
                             }]
                         }
                     }).result.then(function(result) {
-                        $state.go('devis', null, { reload: true });
+                        $state.go('mesdevis', null, { reload: true });
                     }, function() {
                         $state.go('^');
                     })

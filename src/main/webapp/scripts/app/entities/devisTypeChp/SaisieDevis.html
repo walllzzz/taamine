@@ -35,8 +35,17 @@
         			</div>
         			</td>
                    
-                    <td><input type="text" class="form-control" id="{{devisTypeChp.valeurChamp.champId}}" name="{{devisTypeChp.valeurChamp.champId}}"
-                    			ng-model="devisTypeChp.valeurChamp.valValeur" /></td>
+                    <td>
+                    <div ng-switch on="devisTypeChp.champ.ChpType">
+    <div ng-switch-when="devisTypeChp.champ.ChpType == 1">
+        <!-- code to render a large video block-->
+    </div>
+    <div ng-switch-default>
+       {{devisTypeChp.obligatoire}}
+                    <input type="text" class="form-control" id="{{devisTypeChp.valeurChamp.champId}}" name="{{devisTypeChp.champ.libelle}}"
+                    			ng-model="devisTypeChp.valeurChamp.valValeur" />
+    </div>
+</div></td>
                   <td>
                  
                   </td>

@@ -21,19 +21,17 @@ angular.module('taamineApp')
             	DevisUser.setDevisChamps($scope.devisTypeChps);
             	DevisUser.saveDevis();
              	//$scope.saveDevis();
-            	 $state.go('mesdevis');
+            	$state.go('mesdevis');
             });
         };
        
         
         $scope.load = function(id) {
         	DevisTypeChpByTypeDevis.getByIdTypeDevis({id: id},function(result) {
-        	
-        		//$scope.devis.dateDevis=JSON.stringify($scope.devis.dateDevis);
-        		
         		$scope.devis.typeDevisId=id;
                 var devisTypeChpsV = result;
                 devisTypeChpsV.forEach(function(devistypeChp) {
+                	
             	   Champ.get({id: devistypeChp.champId}, function(result) {
             		   devistypeChp.champ = result;
             		   devistypeChp.valeurChamp={};
