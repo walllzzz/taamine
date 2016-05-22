@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('taamineApp')
-    .controller('DevisTypeChpByTypeDevisController', function ($rootScope, $scope, $state,$filter,$stateParams,Principal, DevisTypeChpByTypeDevis,ValeurChamp,Champ,User,Devis,DevisUser) {
+    .controller('DevisTypeChpByTypeDevisController', function ($rootScope, $scope, $state,$filter,$stateParams,Principal, DevisTypeChpByTypeDevis,ValeurChamp,Champ,User,Devis,DevisUser,ChpListeDeroulanteChamp) {
 
         $scope.devisTypeChps = [];
         $scope.devis={
@@ -37,9 +37,17 @@ angular.module('taamineApp')
             		   devistypeChp.valeurChamp={};
             		   devistypeChp.valeurChamp.champId=result.id;
             		   devistypeChp.valeurChamp.valValeur="";
-            		   $scope.devisTypeChps.push(devistypeChp);
+            		   devistypeChp.champ.list=[];
+            		   ChpListeDeroulanteChamp.query({id:devistypeChp.champId},function(result){
+                		   result.forEach(function(listChamp){
+                			   devistypeChp.champ.list.push(listChamp);
+                		   });
+                		   $scope.devisTypeChps.push(devistypeChp);
+                		   console.log(devistypeChp);
+                	   });
             		  
                    });            	   
+            	  
             	});             
             });
         };

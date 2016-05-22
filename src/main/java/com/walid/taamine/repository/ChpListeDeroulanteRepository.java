@@ -11,4 +11,7 @@ import java.util.List;
  */
 public interface ChpListeDeroulanteRepository extends JpaRepository<ChpListeDeroulante,Long> {
 
+
+	List<ChpListeDeroulante> findAllByChampId(Long id);
+
 }

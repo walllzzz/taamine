@@ -13,4 +13,9 @@ angular.module('taamineApp')
             },
             'update': { method:'PUT' }
         });
-    });
+    })
+    .factory('ChpListeDeroulanteChamp', function ($resource, DateUtils) {
+        return $resource('api/chpListeDeroulantes/champ/:id', {}, {
+            'query': { method: 'GET', isArray: true}
+        });
+    });;

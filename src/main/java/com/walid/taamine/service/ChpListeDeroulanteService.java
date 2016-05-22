@@ -33,4 +33,12 @@ public interface ChpListeDeroulanteService {
      *  delete the "id" chpListeDeroulante.
      */
     public void delete(Long id);
+    
+    
+    /**
+     * find by champ Id
+     * @param id
+     * @return
+     */
+	public List<ChpListeDeroulanteDTO> findByChampId(Long id);
 }

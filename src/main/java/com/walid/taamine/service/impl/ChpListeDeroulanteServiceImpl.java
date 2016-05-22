@@ -75,4 +75,13 @@ public class ChpListeDeroulanteServiceImpl implements ChpListeDeroulanteService{
         log.debug("Request to delete ChpListeDeroulante : {}", id);
         chpListeDeroulanteRepository.delete(id);
     }
+
+	@Override
+	public List<ChpListeDeroulanteDTO> findByChampId(Long id) {
+		log.debug("Request to get ChpListeDeroulante : {}", id);
+		 List<ChpListeDeroulanteDTO> result = chpListeDeroulanteRepository.findAllByChampId(id).stream()
+		            .map(chpListeDeroulanteMapper::chpListeDeroulanteToChpListeDeroulanteDTO)
+		            .collect(Collectors.toCollection(LinkedList::new));
+		 return result;
+	}
 }

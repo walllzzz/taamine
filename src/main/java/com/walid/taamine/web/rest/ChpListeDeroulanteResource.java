@@ -103,6 +103,19 @@ public class ChpListeDeroulanteResource {
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    
+    /**
+     * GET  /chpListeDeroulantes/champ/:id -> get the "id" champs.
+     */
+    @RequestMapping(value = "/chpListeDeroulantes/champ/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public List<ChpListeDeroulanteDTO> getChpListeDeroulanteByChampId(@PathVariable Long id) {
+        log.debug("REST request to get ChpListeDeroulante by Champ Id: {}", id);
+        return chpListeDeroulanteService.findByChampId(id);
+    }
 
     /**
      * DELETE  /chpListeDeroulantes/:id -> delete the "id" chpListeDeroulante.

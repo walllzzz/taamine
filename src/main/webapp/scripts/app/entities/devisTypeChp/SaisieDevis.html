@@ -1,5 +1,5 @@
 <div>
-    <h2 translate="taamineApp.devisTypeChp.home.title">DevisTypeChps</h2>
+    <h2>Saisie devis assurence</h2>
     <jh-alert></jh-alert>
     <div class="container-fluid">
         <div class="row">
@@ -30,22 +30,26 @@
                 <tr ng-repeat="devisTypeChp in devisTypeChps track by devisTypeChp.id">
 					<td>
         			<div class="form-group">
-            			<label for="id" >{{devisTypeChp.champ.chpLibelle}}</label>
+            			<label for="id" >
+            			{{devisTypeChp.champ.chpLibelle}}
+            			</label>
+            			<label ng-show="devisTypeChp.obligatoire">*</label>
             		
         			</div>
         			</td>
                    
                     <td>
-                    <div ng-switch on="devisTypeChp.champ.ChpType">
-    <div ng-switch-when="devisTypeChp.champ.ChpType == 1">
-        <!-- code to render a large video block-->
-    </div>
-    <div ng-switch-default>
-       {{devisTypeChp.obligatoire}}
-                    <input type="text" class="form-control" id="{{devisTypeChp.valeurChamp.champId}}" name="{{devisTypeChp.champ.libelle}}"
-                    			ng-model="devisTypeChp.valeurChamp.valValeur" />
-    </div>
-</div></td>
+                    <div ng-switch on="devisTypeChp.champ.chpDansListe">
+					<div ng-switch-when="true">
+						  <select name="singleSelect" class="form-control" ng-model="devisTypeChp.valeurChamp.valValeur">
+						  	<option ng-repeat="option in devisTypeChp.champ.list" value="{{option.valeur}}">{{option.valeur}}</option>
+    					  </select>
+					</div>
+					<div ng-switch-default>
+						<input type="text" class="form-control" id="{{devisTypeChp.valeurChamp.champId}}" name="{{devisTypeChp.champ.libelle}}"
+												ng-model="devisTypeChp.valeurChamp.valValeur" />
+					</div>
+				</div></td>
                   <td>
                  
                   </td>
